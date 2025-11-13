@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { CollaborativeNotepad } from "@/components/collaborative-notepad";
 import { listNotes } from "@/lib/notes";
 
@@ -6,15 +7,15 @@ export default async function Home() {
 
   return (
     <main className="flex min-h-screen w-full flex-col items-center py-10">
-      <header className="mb-8 text-center">
-        <h1 className="text-3xl font-semibold text-zinc-900">
-          Notpad Bersama
-        </h1>
-        <p className="mt-2 max-w-xl text-sm text-zinc-600">
-          Tulis catatan bersama dalam jaringan yang sama. Perubahan realtime
-          akan muncul di semua perangkat yang membuka halaman ini.
-        </p>
-      </header>
+      <div className="mb-6 flex w-full max-w-4xl justify-end px-4">
+        <Link
+          href="/file-share"
+          className="rounded-md bg-zinc-900 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-zinc-800"
+        >
+          Buka Berbagi Berkas
+        </Link>
+      </div>
+
       <CollaborativeNotepad initialNotes={notes} />
     </main>
   );

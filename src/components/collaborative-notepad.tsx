@@ -26,7 +26,7 @@ type Props = {
 
 type BroadcastPayload = {
   id: string;
-  title?: string;
+  title?: string;  
   content?: string;
 };
 
